@@ -23,6 +23,26 @@ class ScoreboardsController < ApplicationController
         end
     end
     
+    
+    def edit
+        
+    end
+    
+    def update
+        if @scoreboard.update(scoreboard_params)
+            redirect_to scoreboard_path(@scoreboard)
+        else
+            render 'edit'
+        end
+    end
+    
+    def destroy
+        @scoreboard.destroy
+        redirect_to root_path
+    end
+    
+    
+    
     private
     
     def scoreboard_params

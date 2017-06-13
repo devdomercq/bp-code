@@ -1,4 +1,9 @@
 <h2><%= @scoreboard.bpecode %></h2>
 <h3><%= @scoreboard.organization %></h3>
 <p><%= @scoreboard.description %></p>
-<p><%= @scoreboard.code %></p>
+<p><pre><%= @scoreboard.code %></pre></p>
+
+<%= link_to "Back", root_path %>
+<%= link_to "Edit", edit_scoreboard_path(@scoreboard) %>
+<%= link_to "Delete", scoreboard_path(@scoreboard), method: :delete, data: {
+    confirm: "Are you sure?" } %>
