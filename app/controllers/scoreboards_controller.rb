@@ -10,11 +10,11 @@ class ScoreboardsController < ApplicationController
     end
     
     def new
-        @scoreboard = Scoreboard.new
+        @scoreboard = current_user.scoreboard.build
     end
     
     def create
-        @scoreboard = Scoreboard.new(scoreboard_params)
+        current_user.scoreboard.build(scoreboard_params)
         
         if @scoreboard.save
             redirect_to root_path
