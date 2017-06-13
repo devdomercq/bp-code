@@ -1,1 +1,5 @@
-<h1>Alive</h1>
+<% @scoreboards.each do |scoreboard| %>
+    <h2><%= link_to scoreboard.bpecode, scoreboard_path(scoreboard) %></h2>
+<% end %>
+
+<%= link_to "Add Scoreboard", new_scoreboard_path %>
