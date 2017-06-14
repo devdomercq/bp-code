@@ -1,15 +1,25 @@
-<h2><%= @scoreboard.bpecode %> - <%= @scoreboard.organization %></h2>
-<h4> <%= @scoreboard.category.name %></h4>
-<p><%= @scoreboard.description %></p>
-<p><pre><%= @scoreboard.code %></pre></p>
-
+<div class="row">
+    <div class="col-md-6">
+        <%= image_tag @scoreboard.scoreboard_img.url(:scoreboard_show), class: "scoreboard-show" %>
+    </div>
+    
+    <div class="col-md-6">
+        <div class="scoreboard-info">
+            <h2 class="scoreboard-title"><%= @scoreboard.bpecode %> - <%= @scoreboard.organization %></h2>
+            <h4 class="scoreboard-category"> <%= @scoreboard.category.name %></h4>
+            <p class="scoreboard-desc"><%= @scoreboard.description %></p>
+            <p class="scoreboard-code"><pre><%= @scoreboard.code %></pre></p>
+        </div>    
+    </div>
+</div>
 
 <div class="links btn-group">
     <% if user_signed_in? %>
         <% if @scoreboard.user_id == current_user.id %>
-            <%= link_to "Edit", edit_scoreboard_path(@scoreboard) %>
+            <%= link_to "Edit", edit_scoreboard_path(@scoreboard), class: "btn btn-custom" %>
             <%= link_to "Delete", scoreboard_path(@scoreboard), method: :delete, data: {
-                confirm: "Are you sure?" } %>
+                confirm: "Are you sure?"}, class: "btn btn-custom" %>
         <% end %>
     <% end %>
 </div>
+
