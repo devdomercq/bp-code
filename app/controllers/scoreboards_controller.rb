@@ -8,6 +8,14 @@ class ScoreboardsController < ApplicationController
             @category_id = Category.find_by(name: params[:category]).id
             @scoreboards = Scoreboard.where(:category_id => @category_id).order("created_at DESC")
         end
+     
+    @scoreboards = Scoreboard.all
+  if params[:search]
+    @scoreboards = Scoreboard.search(params[:search]).order("created_at DESC")
+  else
+    @scoreboards = Scoreboard.all.order("created_at DESC")
+  end  
+        
         
         
     end
