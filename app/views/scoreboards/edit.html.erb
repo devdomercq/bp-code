@@ -1,11 +1,15 @@
-<h1>Edit Scoreboard</h1>
-
-<%= simple_form_for @scoreboard, html: {multipart: true} do |f| %>
-  <%= f.file_field :scoreboard_img %>
-  <%= f.select :category_id, @categories %>
-  <%= f.input :bpecode, label: "Event Code" %>
-  <%= f.input :organization %>
-  <%= f.input :description %>
-  <%= f.input :code, label: "Source Code" %>
-  <%= f.button :submit %>
-<% end %>
+<div class="col-md-10 col-md-offset-1">
+    <div class="new-scoreboard-form">
+      <h1>Edit Scoreboard</h1>
+      
+      <%= simple_form_for @scoreboard, html: {multipart: true} do |f| %>
+        <%= f.file_field :scoreboard_img %>
+        <%= f.select :category_id, @categories %>
+        <%= f.input :bpecode, label: "Event Code" %>
+        <%= f.input :organization %>
+        <%= f.input :description %>
+        <%= f.input :code, label: "Source Code" %>
+        <%= f.button :submit %>
+      <% end %>
+  </div>
+</div>

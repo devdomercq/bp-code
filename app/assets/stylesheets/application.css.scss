@@ -15,13 +15,279 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
+
+ 
+/* Variables, mixins, etc.. */
+
+@mixin background-tile {
+	box-sizing: border-box;
+	background-color: #fff;
+	border-radius: 5px;
+	
+	padding: 0.2em 0.2em;
+}
+
+
+/* General styles */
+
+body {
+	background: -webkit-linear-gradient(20deg, #1987C4 40%, #8DC63F 100%);
+  background:    -moz-linear-gradient(20deg, #1987C4 40%, #8DC63F 100%);
+  background:     -ms-linear-gradient(20deg, #1987C4 40%, #8DC63F 100%);
+  background:      -o-linear-gradient(20deg, #1987C4 40%, #8DC63F 100%);
+  background:         linear-gradient(20deg, #1987C4 40%, #8DC63F 100%);
+	font-family: 'Lato', sans-serif;
+	height: 100vh;
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Lato', sans-serif;
+	font-weight: 200;
+	text-transform: uppercase;
+}
+
+p.alert, p.notice {
+	margin: 0;
+}
+
+
+/* Navbar/navigation styles */
+
+.navbar {
+	font-family: 'Lato', sans-serif;
+	text-transform: uppercase;
+}
+.navbar-default {
+	background-color: #fff;
+	padding-bottom: 5px;
+	padding-top: 5px;
+
+	.navbar-nav > li > a {
+		color: #222;
+		&:hover {
+			color: darken(#bdbdbd, 5%);
+			transition: 0.5s;
+		}
+	}
+
+	.navbar-header {
+
+		.navbar-brand {
+			color: #1987C4;
+			letter-spacing: 1.2px;
+			text-transform: uppercase;
+			font-size: 2.3em;
+			font-weight: bold;
+		}
+
+	}
+
+	.dropdown-menu > li > a:hover {
+		background-color: darken(#bdbdbd, 5%);
+		color: #fff;
+	}
+
+	.navbar-nav > .open > a, .navbar-nav > .open > a:hover, .navbar-nav > .open > a:focus {
+		background-color: darken(#bdbdbd, 5%);
+		color: #fff;	
+	}
+
+}
+
+.dropdown-menu > .active > a {
+	background-color: #bdbdbd;
+	color: #fff;
+}
+
+
+/* Button/link styles */
+
+.btn-custom {
+	color: darken(#bdbdbd, 5%);
+	background-color: #fff;
+	border: 1px solid darken(#bdbdbd, 5%);
+	padding: 8px 20px;
+	border-radius: 0px;
+	font-family: 'Lato', sans-serif;
+	&:hover {
+		text-decoration: none;
+		background-color: darken(#bdbdbd, 5%);
+		color: #fff;
+		transition: 0.5s;
+	}
+}
+
+.btn-custom2 {
+	color: #333;
+	background-color: #fff;
+	border: 1px solid #222;
+	padding: 8px 20px;
+	border-radius: 0px;
+	font-family: 'Lato', sans-serif;
+	&:hover {
+		text-decoration: none;
+		background-color: #333;
+		color: #fff;
+		transition: 0.5s;
+	}	
+}
+
+.links {
+
+	.btn-custom {
+		padding: 3px 10px;
+		font-weight: 300;
+	}
+
+}
+
+.scoreboard-links {
+
+	.btn-custom {
+		padding: 3px 10px;
+		font-weight: 300;
+		margin-top: 40px;	
+	}
+
+}
+
+/* scoreboard styles */
 
 .scoreboard {
     width: 384px;
     height: 216px;
+	margin-bottom: 20px;
+	@include background-tile;
 }
 
 .scoreboard-show {
     width: 480px;
     height: 270px;
+	@include background-tile;
+}
+
+.scoreboard-info {
+	@include background-tile;
+
+	.scoreboard-title {
+		margin-top: 0;
+		font-size: 4em;
+		font-weight: bold;
+	}
+
+	.scoreboard-director {
+		font-size: 1.5em;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		font-style: italic;
+		font-weight: lighter;
+		span {
+			font-size: 0.80em;
+		}	
+	}
+
+	.scoreboard-desc {
+		font-size: 1.05em;
+		line-height: 1.5;
+		margin-bottom: 15px;
+		margin-top: 15px;
+	}
+
+}
+
+
+/* current-category styles */
+
+.current-category {
+	margin-bottom: 40px;
+}
+
+
+
+/* New scoreboard Form styles */
+
+.new-scoreboard-form {
+	@include background-tile;
+
+	h1 {
+		margin-top: 0;
+		font-weight: bold;
+	}
+
+	#category_id {
+		margin-bottom: 10px;
+	}
+
+	#scoreboard_scoreboard_img {
+		margin-bottom: 10px;
+	}
+
+}
+
+
+/* Edit scoreboard Form styles */
+
+.edit-scoreboard-form {
+
+	@include background-tile;
+
+	h1 {
+		margin-top: 0;
+		font-weight: bold;
+	}
+
+	#scoreboard_category_id {
+		margin-bottom: 10px;
+	}
+
+	#scoreboard_scoreboard_img {
+		margin-bottom: 10px;
+	}
+
+}
+
+/* New/Edit review form styles */
+
+.new-review-form, .edit-review-form {
+	@include background-tile;
+
+	h1 {
+		margin-top: 0;
+		font-weight: bold;
+	}
+
+	#rating-form {
+		margin-bottom: 15px;
+
+		label {
+			disscoreboard: block;
+		}
+
+	}
+
+}
+
+
+/* Signup/Login form styles */
+
+.signup-form {
+	@include background-tile;
+
+	h2 {
+		margin-top: 0;
+		font-weight: bold;
+	}
+
+}
+
+.login-form {
+	@include background-tile;
+
+	h2 {
+		margin-top: 0;
+	}
+
 }
