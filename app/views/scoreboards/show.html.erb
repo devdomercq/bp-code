@@ -3,7 +3,13 @@
 <p><%= @scoreboard.description %></p>
 <p><pre><%= @scoreboard.code %></pre></p>
 
-<%= link_to "Back", root_path %>
-<%= link_to "Edit", edit_scoreboard_path(@scoreboard) %>
-<%= link_to "Delete", scoreboard_path(@scoreboard), method: :delete, data: {
-    confirm: "Are you sure?" } %>
+
+<div class="links btn-group">
+    <% if user_signed_in? %>
+        <% if @scoreboard.user_id == current_user.id %>
+            <%= link_to "Edit", edit_scoreboard_path(@scoreboard) %>
+            <%= link_to "Delete", scoreboard_path(@scoreboard), method: :delete, data: {
+                confirm: "Are you sure?" } %>
+        <% end %>
+    <% end %>
+</div>
