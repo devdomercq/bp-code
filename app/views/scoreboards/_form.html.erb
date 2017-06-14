@@ -1,6 +1,6 @@
 <%= simple_form_for @scoreboard do |f| %>
-  <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select Category") %>
   <%= f.file_field :scoreboard_img %>
+  <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select Category") %>
   <%= f.input :bpecode, label: "Event Code" %>
   <%= f.input :organization %>
   <%= f.input :description %>

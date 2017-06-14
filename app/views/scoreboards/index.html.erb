@@ -3,9 +3,15 @@
 <% if @scoreboards.count == 0 %>
     <h3>There are no scoreboards in this category.</h3>
 <% else %>
-    <% @scoreboards.each do |scoreboard| %>
-        <h2><%= link_to scoreboard.bpecode, scoreboard_path(scoreboard) %></h2>
-    <% end %>
-
+    <div class="row">
+        <% @scoreboards.each do |scoreboard| %>
+            <div class="col-md-4">
+                <a href="/scoreboards/ <%= scoreboard.id %>">
+                    <%= image_tag scoreboard.scoreboard_img.url(:scoreboard_index), class: "scoreboard"
+                        %>
+                </a>
+            </div>
+        <% end %>       
+    </div>
 <% end %>
 
