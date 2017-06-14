@@ -57,7 +57,7 @@ class ScoreboardsController < ApplicationController
     private
     
     def scoreboard_params
-        params.require(:scoreboard).permit(:bpecode, :organization, :code, :description, :category_id)
+        params.require(:scoreboard).permit(:bpecode, :organization, :code, :description, :category_id, :scoreboard_img)
     end
     
     def find_scoreboard 
