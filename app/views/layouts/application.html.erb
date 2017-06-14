@@ -39,6 +39,13 @@
       <% if user_signed_in? %>
         <li><%= link_to "Add Scoreboard", new_scoreboard_path %></li>
       <% end %>
+      <li>
+      <%= form_tag(scoreboards_path, :method => "get", id: "search-form", class: 'navbar-form navbar-left') do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Scoreboards", class: 'form-control' %>
+    <%= submit_tag "Search", :name => nil, class: 'btn btn-default' %>
+    </li>
+    <% end %>
+      
     </ul>
     
   </div>
