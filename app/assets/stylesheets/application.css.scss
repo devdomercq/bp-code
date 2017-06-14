@@ -101,7 +101,9 @@ p.alert, p.notice {
 	color: #fff;
 }
 
-
+.btn-group, .btn-group-vertical {
+	margin-top: -35em;
+}
 /* Button/link styles */
 
 .btn-custom {
@@ -163,8 +165,8 @@ p.alert, p.notice {
 }
 
 .scoreboard-show {
-    width: 480px;
-    height: 270px;
+    width: 576px;
+    height: 324px;
 	@include background-tile;
 }
 
