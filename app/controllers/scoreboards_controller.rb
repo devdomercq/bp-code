@@ -11,10 +11,12 @@ class ScoreboardsController < ApplicationController
     
     def new
         @scoreboard = current_user.scoreboards.build
+        @categories = Category.all.map{ |c| [c.name, c.id] }
     end
     
     def create
          @scoreboard = current_user.scoreboards.build(scoreboard_params)
+         @scoreboard.category_id = params[:category_id]
         
         if @scoreboard.save
             redirect_to root_path
@@ -25,10 +27,12 @@ class ScoreboardsController < ApplicationController
     
     
     def edit
-        
+        @categories = Category.all.map{ |c| [c.name, c.id] }
     end
     
     def update
+        @scoreboard.category_id = params[:category_id]
+        
         if @scoreboard.update(scoreboard_params)
             redirect_to scoreboard_path(@scoreboard)
         else
@@ -46,7 +50,7 @@ class ScoreboardsController < ApplicationController
     private
     
     def scoreboard_params
-        params.require(:scoreboard).permit(:bpecode, :organization, :code, :description)
+        params.require(:scoreboard).permit(:bpecode, :organization, :code, :description, :category_id)
     end
     
     def find_scoreboard 
