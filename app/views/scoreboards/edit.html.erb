@@ -1,3 +1,10 @@
 <h1>Edit Scoreboard</h1>
 
-<%= render 'form' %>
+<%= simple_form_for @scoreboard, html: {multipart: true} do |f| %>
+  <%= f.select :category_id, @categories %>
+  <%= f.input :bpecode, label: "Event Code" %>
+  <%= f.input :organization %>
+  <%= f.input :description %>
+  <%= f.input :code, label: "Source Code" %>
+  <%= f.button :submit %>
+<% end %>
