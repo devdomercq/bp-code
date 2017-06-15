@@ -17,13 +17,11 @@
 //= require_tree .
 //= require clipboard
 /* global $ */
-
 $(document).ready(function(){  
-  // copy code to clipboard
+  
   var clipboard = new Clipboard('.clipboard-btn');
-
+  console.log(clipboard);
+	
 });
-
-
 
 
