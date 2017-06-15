@@ -2,6 +2,7 @@ class ScoreboardsController < ApplicationController
     before_action :find_scoreboard, only: [:show, :edit, :update, :destroy]
     
     def index
+        
         if !params[:category].blank?
             @category_id = Category.find_by(name: params[:category]).id
             @scoreboards = Scoreboard.where(:category_id => @category_id).order("created_at DESC")
