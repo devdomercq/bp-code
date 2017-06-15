@@ -1,6 +1,9 @@
 <%= simple_form_for @scoreboard do |f| %>
   <%= f.select :category_id, options_for_select(@categories), { :include_blank => 'Select Category ' }, { :required => true, :class => 'btn btn-default btn-sm dropdown-toggle marg15' } %>
   <%= f.input :bpecode, label: "Event Code", :required => true %>
+    <%= f.input :eventdate, as: :date, start_year: Date.today.year - 5,
+                              end_year: Date.today.year + 5,
+                              order: [:month, :year] %>
   <%= f.input :organization, :required => true %>
   <%= f.input :description %>
   <%= f.input :code, label: "Source Code" %>

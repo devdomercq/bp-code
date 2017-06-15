@@ -1,38 +1,29 @@
 <div class="container">
-   
-      
-
-
-
-<div class="row">
+  <div class="row">
     <div class="col-md-6">
         <%= image_tag @scoreboard.scoreboard_img.url(:scoreboard_show), class: "scoreboard-show" %>
     </div>
-
-
-
     <div class="col-md-6">
-        <div class="well">
+      <div class="well">
         <div class="scoreboard-info">
-            <h2 class="scoreboard-title"><%= @scoreboard.bpecode %></h2>
-            <h3 class="scoreboard-org"><%= @scoreboard.organization %></h3>
-            <h4 class="scoreboard-category"> <%= @scoreboard.category.name %></h4>
-            <p class="scoreboard-desc"><%= @scoreboard.description %></p>
-            <p class="scoreboard-code"><pre id="code"><%= @scoreboard.code %></pre></p>
+          <h2 class="scoreboard-title"><%= @scoreboard.bpecode %></h2>
+          <h3 class="scoreboard-org"><%= @scoreboard.organization %></h3>
+          <h4 class="scoreboard-category"> <%= @scoreboard.category.name %></h4>
+          <p class="scoreboard-desc"><%= @scoreboard.description %></p>
+          <p class="scoreboard-code"><pre id="code"><%= @scoreboard.code %></pre></p>
         </div>    
+      </div>
     </div>
-</div>
-</div>
-
-<div class="links btn-group">
+  </div>
+  <div class="links btn-group">
     <% if user_signed_in? %>
-        <% if @scoreboard.user_id == current_user.id %>
-            <%= link_to "Edit", edit_scoreboard_path(@scoreboard), class: "btn btn-custom" %>
-            <%= link_to "Delete", scoreboard_path(@scoreboard), method: :delete, data: {
-                confirm: "Are you sure?"}, class: "btn btn-custom" %>
-        <% end %>
+      <% if @scoreboard.user_id == current_user.id %>
+          <%= link_to "Edit", edit_scoreboard_path(@scoreboard), class: "btn btn-custom" %>
+          <%= link_to "Delete", scoreboard_path(@scoreboard), method: :delete, data: {
+              confirm: "Are you sure?"}, class: "btn btn-custom" %>
+      <% end %>
     <% end %>
+  </div>
 </div>
-
 
 
