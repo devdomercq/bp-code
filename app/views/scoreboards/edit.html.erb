@@ -5,6 +5,8 @@
         <h1 class="text-center">Edit Scoreboard</h1>
         <%= simple_form_for @scoreboard, html: {multipart: true} do |f| %>
           <%= f.select :category_id, @categories, {}, { :class => 'btn btn-default btn-sm dropdown-toggle marg15' } %>
+            <%= f.input :eventdate, label: "Event Date", as: :date, 
+                              order: [:month, :day, :year] %>
           <%= f.input :bpecode, label: "Event Code", :required => true %>
           <%= f.input :organization, :required => true %>
           <%= f.input :description %>
