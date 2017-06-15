@@ -1,13 +1,19 @@
+<div class="container">
+   <div class="col-md-12">
+      <div class="well">
+
+
+
 <div class="row">
     <div class="col-md-6">
         <%= image_tag @scoreboard.scoreboard_img.url(:scoreboard_show), class: "scoreboard-show" %>
     </div>
-    
+
+
+
     <div class="col-md-6">
         <div class="scoreboard-info">
-            <div class="field form-group">
             <h2 class="scoreboard-title"><%= @scoreboard.bpecode %></h2>
-            </div>
             <h3 class="scoreboard-org"><%= @scoreboard.organization %></h3>
             <h4 class="scoreboard-category"> <%= @scoreboard.category.name %></h4>
             <p class="scoreboard-desc"><%= @scoreboard.description %></p>
@@ -28,4 +34,6 @@
 </div>
 
 
- 
+ </div>
+ </div>
+ </div>
