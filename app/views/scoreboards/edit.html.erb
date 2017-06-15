@@ -5,8 +5,8 @@
       <%= simple_form_for @scoreboard, html: {multipart: true} do |f| %>
         <%= f.file_field :scoreboard_img %>
         <%= f.select :category_id, @categories %>
-        <%= f.input :bpecode, label: "Event Code" %>
-        <%= f.input :organization %>
+        <%= f.input :bpecode, label: "Event Code", :required => true %>
+        <%= f.input :organization, :required => true %>
         <%= f.input :description %>
         <%= f.input :code, label: "Source Code" %>
         <%= f.button :submit %>
