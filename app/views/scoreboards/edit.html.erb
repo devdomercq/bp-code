@@ -1,16 +1,20 @@
-<div class="col-md-10 col-md-offset-1">
-    <div class="new-scoreboard-form">
-      <h1>Edit Scoreboard</h1>
-      
-      <%= simple_form_for @scoreboard, html: {multipart: true} do |f| %>
-        <%= f.file_field :scoreboard_img %>
-        <%= f.select :category_id, @categories %>
-        <%= f.input :bpecode, label: "Event Code", :required => true %>
-        <%= f.input :organization, :required => true %>
-        <%= f.input :description %>
-        <%= f.input :code, label: "Source Code" %>
-        <%= f.button :submit %>
-      <% end %>
+<div class="container">
+  <div class="row text">
+    <div class="col-md-8 col-md-offset-1">
+      <div class="well">
+        <h1 class="text-center">Edit Scoreboard</h1>
+        <%= simple_form_for @scoreboard, html: {multipart: true} do |f| %>
+          <%= f.select :category_id, @categories, {}, { :class => 'btn btn-default btn-sm dropdown-toggle marg15' } %>
+          <%= f.input :bpecode, label: "Event Code", :required => true %>
+          <%= f.input :organization, :required => true %>
+          <%= f.input :description %>
+          <%= f.input :code, label: "Source Code" %>
+          <%= f.file_field :scoreboard_img, class: "marg15" %>
+          <div class="text-center">
+            <%= f.button :submit, class: "btn-custom2" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
-

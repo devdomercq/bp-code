@@ -52,6 +52,13 @@ p.alert, p.notice {
 	margin: 0;
 }
 
+.well {
+	background-color:white;
+}
+.well h1{
+	font-weight: bold;
+}
+
 
 /* Navbar/navigation styles */
 
@@ -303,4 +310,12 @@ pre {
 		margin-top: 0;
 	}
 
+}
+.marg15 {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.height300 {
+	height: 300px;
 }
