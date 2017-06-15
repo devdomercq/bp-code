@@ -109,7 +109,7 @@ p.alert, p.notice {
 }
 
 .btn-group, .btn-group-vertical {
-	margin-top: -35em;
+	margin-top: -45em;
 }
 /* Button/link styles */
 
@@ -148,6 +148,7 @@ p.alert, p.notice {
 	.btn-custom {
 		padding: 3px 10px;
 		font-weight: 300;
+		
 	}
 
 }
@@ -172,8 +173,8 @@ p.alert, p.notice {
 }
 
 .scoreboard-show {
-    width: 528px;
-    height: 297px;
+    width: 576px;
+    height: 324px;
 	@include background-tile;
 }
 
