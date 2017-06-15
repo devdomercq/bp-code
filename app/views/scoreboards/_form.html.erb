@@ -1,9 +1,11 @@
 <%= simple_form_for @scoreboard do |f| %>
   <%= f.file_field :scoreboard_img %>
-  <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select Category", class: "btn btn-default btn-sm dropdown-toggle") %>
-  <%= f.input :bpecode, label: "Event Code" %>
-  <%= f.input :organization %>
+  <%= f.select :category_id, options_for_select(@categories), { :include_blank => 'Select Category ' }, { :required => true, :class => 'btn btn-default btn-sm dropdown-toggle' } %>
+  <%= f.input :bpecode, label: "Event Code", :required => true %>
+  <%= f.input :organization, :required => true %>
   <%= f.input :description %>
   <%= f.input :code, label: "Source Code" %>
   <%= f.button :submit %>
 <% end %>
+
+
