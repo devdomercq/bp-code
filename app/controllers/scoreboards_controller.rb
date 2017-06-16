@@ -61,7 +61,10 @@ class ScoreboardsController < ApplicationController
         redirect_to root_path
     end
     
-
+    def listview
+        @scoreboards = Scoreboard.all.order("created_at DESC")
+        
+    end
     
     
     private
