@@ -23,15 +23,20 @@ class ScoreboardsController < ApplicationController
     def new
         @scoreboard = current_user.scoreboards.build
         @categories = Category.all.map{ |c| [c.name, c.id] }
+        
+        
     end
     
     def create
+        
          @scoreboard = current_user.scoreboards.build(scoreboard_params)
          @scoreboard.category_id = params[:category_id]
+         
         
-        if @scoreboard.save
+        if @scoreboard.save 
             redirect_to root_path
         else
+            @categories = Category.all.map{ |c| [c.name, c.id] }
             render 'new'
         end
     end
@@ -69,3 +74,5 @@ class ScoreboardsController < ApplicationController
     end
     
 end
+
+

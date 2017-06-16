@@ -1,5 +1,7 @@
 <%= simple_form_for @scoreboard do |f| %>
+
  <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select Scoreboard Type", :required => true, :class =>'btn btn-default btn-sm dropdown-toggle marg15') %>
+  
   <%= f.input :eventdate, label: "Event Date", as: :date, start_year: Date.today.year - 5,
                               end_year: Date.today.year + 5,
                               order: [:month, :day, :year] %>
