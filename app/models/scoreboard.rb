@@ -1,4 +1,5 @@
 class Scoreboard < ActiveRecord::Base
+  paginates_per 15
   belongs_to :user
   belongs_to :category
   validates :bpecode, uniqueness: true
@@ -8,10 +9,9 @@ class Scoreboard < ActiveRecord::Base
                     :default_url => "/images/:style/missing.png"
   validates_attachment_content_type :scoreboard_img, :content_type => /\Aimage\/.*\z/
   
- 
-def self.search(search)
-  where("bpecode LIKE ? OR organization LIKE ? OR description LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%") 
-end
+  def self.search(search)
+    where("bpecode LIKE ? OR organization LIKE ? OR description LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%") 
+  end
 end
 
 
