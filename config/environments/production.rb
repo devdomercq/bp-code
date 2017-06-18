@@ -89,4 +89,8 @@ config.paperclip_defaults = {
   
 }
 
+
+
+
+
 end

@@ -14,8 +14,12 @@
           <% if user_signed_in? %>
             <% if current_user.admin? %>
               <p class="scoreboard-code"><pre id="code"><%= @scoreboard.code %></pre></p>
+              <div class="text-center">
+                <button class="btn-custom2 text-center" onclick="copyToClipboard('#code')">Copy Code</button>
+              </div>
             <% end %>
           <% end %>
+          
         </div>    
       </div>
     </div>
@@ -32,4 +36,12 @@
 </div>
 
 
- 
+<script>
+  function copyToClipboard(element) {
+      var $temp = $("<input>");
+      $("body").append($temp);
+      $temp.val($(element).text()).select();
+      document.execCommand("copy");
+      $temp.remove();
+    }
+</script>
