@@ -36,6 +36,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    animate-rails (1.0.10)
+      rails
     arel (6.0.4)
     autoprefixer-rails (7.1.1.2)
       execjs
@@ -74,6 +76,8 @@ GEM
     execjs (2.7.0)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
+    hover-rails (2.0.2)
+      railties (>= 3.2)
     i18n (0.8.0)
     jbuilder (2.6.1)
       activesupport (>= 3.0.0, < 5.1)
@@ -179,11 +183,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  animate-rails
   aws-sdk (< 2.0)
   bootstrap-sass (~> 3.3.4.1)
   byebug
   coffee-rails (~> 4.1.0)
   devise (~> 4.3)
+  hover-rails
   jbuilder (~> 2.0)
   jquery-rails
   paperclip (~> 4.2.1)

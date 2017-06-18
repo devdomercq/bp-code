@@ -8,7 +8,7 @@
         <%  @scoreboards.each do |scoreboard| %>
             <div class="col-md-4">
                 <a href="/scoreboards/ <%= scoreboard.id %>">
-                    <%= image_tag scoreboard.scoreboard_img.url(:scoreboard_index), class: "scoreboard"
+                    <%= image_tag scoreboard.scoreboard_img.url(:scoreboard_index), class: "scoreboard hvr-wobble-vertical hvr-shadow"
                         %>
                 </a>
             </div>

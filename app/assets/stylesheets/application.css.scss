@@ -12,11 +12,13 @@
  *
  *= require_tree .
  *= require_self
+ *= require animate
+ *= require hover
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import url(https://fonts.googleapis.com/css?family=Lato);
-
+@import 'hover';
 
  
 /* Variables, mixins, etc.. */
