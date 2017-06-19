@@ -31,6 +31,11 @@ gem 'aws-sdk', '< 2.0'
 gem 'animate-rails'
 gem 'hover-rails'
 gem 'kaminari'
+group :development do
+  gem "better_errors"
+end
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

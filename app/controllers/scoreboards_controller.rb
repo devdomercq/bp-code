@@ -45,11 +45,12 @@ class ScoreboardsController < ApplicationController
     
     def edit
         @categories = Category.all.map{ |c| [c.name, c.id] }
+        
     end
     
     def update
         @scoreboard.category_id = params[:category_id]
-        
+        @categories = Category.all.map{ |c| [c.name, c.id] }
         if @scoreboard.update(scoreboard_params)
             redirect_to scoreboard_path(@scoreboard)
         else
