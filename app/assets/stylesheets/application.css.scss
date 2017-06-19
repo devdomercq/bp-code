@@ -77,7 +77,7 @@ p.alert, p.notice {
 	.navbar-nav > li > a {
 		color: #fff;
 		&:hover {
-			color: darken(#bdbdbd, 5%);
+			color: darken(#fff, 5%);
 			transition: 0.5s;
 		}
 	}
@@ -95,19 +95,21 @@ p.alert, p.notice {
 	}
 
 	.dropdown-menu > li > a:hover {
-		background-color: darken(#bdbdbd, 5%);
+		background-color: darken(#0786C2, 5%);
 		color: #fff;
 	}
 
 	.navbar-nav > .open > a, .navbar-nav > .open > a:hover, .navbar-nav > .open > a:focus {
-		background-color: darken(#bdbdbd, 5%);
+		background-color: darken(#0786C2, 5%);
 		color: #fff;	
 	}
 
 }
-
+.dropdown menu li {
+	background-color: #0786C2;
+}
 .dropdown-menu > .active > a {
-	background-color: #bdbdbd;
+	background-color: #0786C2;
 	color: #fff;
 }
 
@@ -273,28 +275,6 @@ pre {
 
 }
 
-/* New/Edit review form styles */
-
-.new-review-form, .edit-review-form {
-	@include background-tile;
-
-	h1 {
-		margin-top: 0;
-		font-weight: bold;
-	}
-
-	#rating-form {
-		margin-bottom: 15px;
-
-		label {
-			disscoreboard: block;
-		}
-
-	}
-
-}
-
-
 /* Signup/Login form styles */
 
 .signup-form {
@@ -319,6 +299,9 @@ pre {
 	margin-top: 15px;
 	margin-bottom: 15px;
 }
+.rightmarg45 {
+	margin-right:45px;	
+}
 
 .height300 {
 	height: 300px;
@@ -326,4 +309,14 @@ pre {
 
 .pagination {
 	width: 100%;
+}
+
+.flash-container {
+  position: absolute;
+  width: 100%;
+}
+
+.alert {
+  text-align: center;
+  margin-top: -14px;
 }

@@ -5,12 +5,12 @@ class ScoreboardsController < ApplicationController
         
         if !params[:category].blank?
             @category_id = Category.find_by(name: params[:category]).id
-            @scoreboards = Scoreboard.where(:category_id => @category_id).order("created_at DESC").page(params[:page]).per(9)
+            @scoreboards = Scoreboard.where(:category_id => @category_id).order("eventdate DESC").page(params[:page]).per(9)
             
         elsif params[:search]
-            @scoreboards = Scoreboard.search(params[:search]).order("created_at DESC")
+            @scoreboards = Scoreboard.search(params[:search]).order("eventdate DESC")
         else
-            @scoreboards = Scoreboard.all.order("created_at DESC").page(params[:page]).per(9)
+            @scoreboards = Scoreboard.all.order("eventdate DESC").page(params[:page]).per(9)
 
   
         end  
@@ -64,7 +64,7 @@ class ScoreboardsController < ApplicationController
     
     def listview
         
-        @scoreboards = Scoreboard.order("Created_at DESC").page(params[:page])
+        @scoreboards = Scoreboard.order("eventdate DESC").page(params[:page])
     end
     
     

@@ -12,10 +12,11 @@
           <h4 class="scoreboard-eventdate">Event Date: <%= @scoreboard.eventdate.strftime("%B %e, %Y") %></h4></h4>
           <p class="scoreboard-desc"><%= @scoreboard.description %></p>
           <% if user_signed_in? %>
-            <% if current_user.admin? %>
+            <% if !current_user.admin? %>
               <p class="scoreboard-code"><pre id="code"><%= @scoreboard.code %></pre></p>
               <div class="text-center">
-                <button class="btn-custom2 text-center" onclick="copyToClipboard('#code')">Copy Code</button>
+                <button class="btn-custom2 text-center" 
+                  onclick="copyToClipboard('#code')" data-clipboard-text="1">Copy Code</button>
               </div>
             <% end %>
           <% end %>
@@ -44,4 +45,37 @@
       document.execCommand("copy");
       $temp.remove();
     }
+    
+    // Tooltip
+
+$('button').tooltip({
+  trigger: 'click',
+  placement: 'bottom'
+});
+
+function setTooltip(message) {
+  $('button').tooltip('hide')
+    .attr('data-original-title', message)
+    .tooltip('show');
+}
+
+function hideTooltip() {
+  setTimeout(function() {
+    $('button').tooltip('hide');
+  }, 1000);
+}
+
+// Clipboard
+
+var clipboard = new Clipboard('button');
+
+clipboard.on('success', function(e) {
+  setTooltip('Copied!');
+  hideTooltip();
+});
+
+clipboard.on('error', function(e) {
+  setTooltip('Failed!');
+  hideTooltip();
+});
 </script>

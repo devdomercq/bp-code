@@ -40,7 +40,7 @@
               <li><%= link_to "Add Scoreboard", new_scoreboard_path %></li>
             <% end %>
           <% end %>
-          <li>
+          <li class="rightmarg45">
             <%= form_tag(scoreboards_path, :method => "get", id: "search-form", class: 'navbar-form navbar-left') do %>
             <%= text_field_tag :search, params[:search], placeholder: "Search Scoreboards", class: 'form-control' %>
             <%= submit_tag "Search", :name => nil, class: 'btn btn-default' %>
@@ -49,7 +49,7 @@
         </ul>
       </div>
     </nav>
-    <div class="container container">
+    <div class="flash-container container">
       <% flash.each do |type, msg| %>
         <%= content_tag :div, msg, class: "alert alert-success" %>
       <% end %>
