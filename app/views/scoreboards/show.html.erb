@@ -12,7 +12,7 @@
           <h4 class="scoreboard-eventdate">Event Date: <%= @scoreboard.eventdate.strftime("%B %e, %Y") %></h4></h4>
           <p class="scoreboard-desc"><%= @scoreboard.description %></p>
           <% if user_signed_in? %>
-            <% if !current_user.admin? %>
+            <% if  current_user.admin = true %>
               <p class="scoreboard-code"><pre id="code"><%= @scoreboard.code %></pre></p>
               <div class="text-center">
                 <button class="btn-custom2 text-center" 
@@ -26,7 +26,7 @@
     </div>
   </div>
   <div class="links btn-group">
-    <% if user_signed_in? %>
+    <% if current_user.admin = true %>
       <% if current_user.admin? %>
           <%= link_to "Edit", edit_scoreboard_path(@scoreboard), class: "btn btn-custom" %>
           <%= link_to "Delete", scoreboard_path(@scoreboard), method: :delete, data: {
@@ -46,36 +46,4 @@
       $temp.remove();
     }
     
-    // Tooltip
-
-$('button').tooltip({
-  trigger: 'click',
-  placement: 'bottom'
-});
-
-function setTooltip(message) {
-  $('button').tooltip('hide')
-    .attr('data-original-title', message)
-    .tooltip('show');
-}
-
-function hideTooltip() {
-  setTimeout(function() {
-    $('button').tooltip('hide');
-  }, 1000);
-}
-
-// Clipboard
-
-var clipboard = new Clipboard('button');
-
-clipboard.on('success', function(e) {
-  setTooltip('Copied!');
-  hideTooltip();
-});
-
-clipboard.on('error', function(e) {
-  setTooltip('Failed!');
-  hideTooltip();
-});
 </script>
