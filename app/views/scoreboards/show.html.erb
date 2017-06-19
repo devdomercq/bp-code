@@ -26,7 +26,7 @@
     </div>
   </div>
   <div class="links btn-group">
-    <% if current_user.admin = true %>
+    <% if user_signed_in? %>
       <% if current_user.admin? %>
           <%= link_to "Edit", edit_scoreboard_path(@scoreboard), class: "btn btn-custom" %>
           <%= link_to "Delete", scoreboard_path(@scoreboard), method: :delete, data: {
