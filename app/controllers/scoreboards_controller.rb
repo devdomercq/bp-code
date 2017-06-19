@@ -8,7 +8,7 @@ class ScoreboardsController < ApplicationController
             @scoreboards = Scoreboard.where(:category_id => @category_id).order("eventdate DESC").page(params[:page]).per(9)
             
         elsif params[:search]
-            @scoreboards = Scoreboard.search(params[:search]).order("eventdate DESC")
+            @scoreboards = Scoreboard.search(params[:search]).order("eventdate DESC").page(params[:page]).per(9)
         else
             @scoreboards = Scoreboard.all.order("eventdate DESC").page(params[:page]).per(9)
 

@@ -49,11 +49,12 @@
         </ul>
       </div>
     </nav>
-    <div class="flash-container container">
-      <% flash.each do |type, msg| %>
-        <%= content_tag :div, msg, class: "alert alert-success" %>
-      <% end %>
+   
+    
     <div class="container">
+      
+        <%= flash_messages %>
+      
         <%= yield %>
     </div>
   </body>
