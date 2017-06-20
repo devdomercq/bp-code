@@ -67,12 +67,15 @@ p.alert, p.notice {
 .navbar {
 	font-family: 'Lato', sans-serif;
 	text-transform: uppercase;
+	min-height: 75px;
+	
 }
 .navbar-default {
 	background-color: #0786C2;
 	padding-bottom: 5px;
-	padding-top: 5px;
+	padding-top: 40px;
 	border-bottom: solid #60A835 4px;
+
 
 	.navbar-nav > li > a {
 		color: #fff;
